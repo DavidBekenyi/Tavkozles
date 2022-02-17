@@ -1,0 +1,28 @@
+void setup() {
+Serial.begin(9600);
+pinMode(A1, INPUT);
+pinMode(9, OUTPUT);
+pinMode(10, OUTPUT);
+pinMode(11, OUTPUT);
+}
+
+void loop() {
+  int poti = analogRead(A1);
+  Serial.println(poti);
+
+  if (poti > 682){
+  digitalWrite(9, LOW);
+  digitalWrite(10, LOW);
+  digitalWrite(11, HIGH);
+  }
+  else if (poti > 321){
+  digitalWrite(9, LOW);
+  digitalWrite(10, HIGH);
+  digitalWrite(11, LOW);
+  }
+  else {
+  digitalWrite(9, HIGH);
+  digitalWrite(10, LOW);
+  digitalWrite(11, LOW);
+  }
+}
